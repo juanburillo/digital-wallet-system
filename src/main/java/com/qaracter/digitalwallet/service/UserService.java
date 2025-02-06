@@ -10,11 +10,13 @@ import java.util.Map;
 public class UserService {
     private final Map<Long, User> users = new HashMap<>();
     private Long userIdCounter = 1L;
+
     public User createUser(String name) {
         User user = new User(userIdCounter++, name);
         users.put(user.getId(), user);
         return user;
     }
+
     public User getUser(Long userId) {
         return users.get(userId);
     }

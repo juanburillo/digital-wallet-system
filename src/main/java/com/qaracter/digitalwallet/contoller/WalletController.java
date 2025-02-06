@@ -10,9 +10,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/wallets")
 public class WalletController {
     private final WalletService walletService;
+
     public WalletController(WalletService walletService) {
         this.walletService = walletService;
     }
+
     @PostMapping
     public String createWallet(@RequestParam Long userId, @RequestParam String currency, @RequestParam Double balance) {
         walletService.createWallet(userId, currency, balance);
