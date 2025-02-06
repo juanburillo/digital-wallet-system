@@ -43,7 +43,7 @@ public class SchedulePayment extends Thread{
         while (true){
             try{
                 timer.schedule(task, TimeUnit.DAYS.toMillis(days));
-                System.out.println("Send " + transaction.getAmount() + transaction.getCurrency() + " to user");
+                System.out.println("Send " + transaction.getAmount() + transaction.getCurrency() + " to user X in" + this.days + " days");
             } catch (Exception e) {
                 System.err.println("Error caught in the thread execution");
                 e.printStackTrace();
