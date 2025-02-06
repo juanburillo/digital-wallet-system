@@ -15,7 +15,7 @@ Welcome to the Digital Wallet & Transaction System! This project allows users to
 
 3. **Scheduled Payments ⏰**
     - Users can set up recurring payments (e.g., "Send $50 to User X every 7 days").
-    - Payments are executed automatically using Java’s `ScheduledExecutorService`.
+    - Payments are executed automatically using Java’s Timer.
 
 ## Team Members 👥
 
@@ -145,13 +145,14 @@ Each controller handles the endpoints for a specific part of the system:
 - Java 17
 - Spring Boot
 - Spring Web
-- Java Threads (`ScheduledExecutorService`)
+- Java Threads
+- Java Timer
 
 ## How to Run Locally 🏃‍♂️
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/digital-wallet.git
+   git clone https://github.com/juanbburillo/digital-wallet.git
    ```
 
 2. Navigate into the project folder:
