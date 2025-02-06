@@ -12,11 +12,11 @@ public class Transaction {
     private String senderWalletId;
     private String recipientWalletId;
     private BigDecimal amount;
-    private String currency;
+    private Currency currency;
     private LocalDateTime timestamp;
     private BigDecimal exchangeRate;
 
-    public Transaction(String transactionId, String senderWalletId, String recipientWalletId, BigDecimal amount, String currency, LocalDateTime timestamp, BigDecimal exchangeRate) {
+    public Transaction(String transactionId, String senderWalletId, String recipientWalletId, BigDecimal amount, Currency currency, LocalDateTime timestamp, BigDecimal exchangeRate) {
         this.transactionId = transactionId;
         this.senderWalletId = senderWalletId;
         this.recipientWalletId = recipientWalletId;
@@ -38,8 +38,8 @@ public class Transaction {
     public BigDecimal getAmount() { return amount; }
     public void setAmount(BigDecimal amount) { this.amount = amount; }
 
-    public String getCurrency() { return currency; }
-    public void setCurrency(String currency) { this.currency = currency; }
+    public Currency getCurrency() { return currency; }
+    public void setCurrency(Currency currency) { this.currency = currency; }
 
     public LocalDateTime getTimestamp() { return timestamp; }
     public void setTimestamp(LocalDateTime timestamp) { this.timestamp = timestamp; }

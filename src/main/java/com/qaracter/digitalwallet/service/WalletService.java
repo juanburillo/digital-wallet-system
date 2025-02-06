@@ -1,5 +1,6 @@
 package com.qaracter.digitalwallet.service;
 
+import com.qaracter.digitalwallet.model.Currency;
 import com.qaracter.digitalwallet.model.User;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +12,7 @@ public class WalletService {
         this.userService = userService;
     }
 
-    public void createWallet(Long userId, String currency, Double balance) {
+    public void createWallet(Long userId, Currency currency, Double balance) {
         User user = userService.getUser(userId);
         if (user != null) {
             user.getWallets().put(currency, balance);

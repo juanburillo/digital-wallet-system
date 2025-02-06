@@ -1,5 +1,6 @@
-package com.qaracter.digitalwallet.contoller;
+package com.qaracter.digitalwallet.controller;
 
+import com.qaracter.digitalwallet.model.Currency;
 import com.qaracter.digitalwallet.service.WalletService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,7 +17,7 @@ public class WalletController {
     }
 
     @PostMapping
-    public String createWallet(@RequestParam Long userId, @RequestParam String currency, @RequestParam Double balance) {
+    public String createWallet(@RequestParam Long userId, @RequestParam Currency currency, @RequestParam Double balance) {
         walletService.createWallet(userId, currency, balance);
         return "Wallet added successfully";
     }

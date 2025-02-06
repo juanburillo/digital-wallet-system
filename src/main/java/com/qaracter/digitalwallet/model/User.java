@@ -6,7 +6,7 @@ import java.util.Map;
 public class User {
     private Long id;
     private String name;
-    private Map<String, Double> wallets = new HashMap<>();
+    private Map<Currency, Double> wallets = new HashMap<>();
 
     public User(Long id, String name) {
         this.id = id;
@@ -21,7 +21,7 @@ public class User {
         return name;
     }
 
-    public Map<String, Double> getWallets() {
+    public Map<Currency, Double> getWallets() {
         return wallets;
     }
 }

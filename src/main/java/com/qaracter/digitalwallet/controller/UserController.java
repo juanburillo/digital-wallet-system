@@ -1,4 +1,4 @@
-package com.qaracter.digitalwallet.contoller;
+package com.qaracter.digitalwallet.controller;
 
 import com.qaracter.digitalwallet.model.User;
 import com.qaracter.digitalwallet.service.UserService;

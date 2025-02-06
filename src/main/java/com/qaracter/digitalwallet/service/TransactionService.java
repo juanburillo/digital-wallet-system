@@ -48,7 +48,7 @@ public class TransactionService {
      * @throws InsufficientFundsException if the sender has insufficient funds
      * @throws IllegalArgumentException if the user IDs or currencies are invalid, or if the exchange rate is missing for cross-currency transactions
      */
-    public Transaction createTransaction(Long senderUserId, String senderCurrency, Long recipientUserId, String recipientCurrency, BigDecimal amount, BigDecimal exchangeRate) throws InsufficientFundsException {
+    public Transaction createTransaction(Long senderUserId, Currency senderCurrency, Long recipientUserId, Currency recipientCurrency, BigDecimal amount, BigDecimal exchangeRate) throws InsufficientFundsException {
 
         User sender = userService.getUser(senderUserId);
         User recipient = userService.getUser(recipientUserId);
@@ -57,8 +57,8 @@ public class TransactionService {
             throw new IllegalArgumentException("Invalid user IDs");
         }
 
-        Map<String, Double> senderWallets = sender.getWallets();
-        Map<String, Double> recipientWallets = recipient.getWallets();
+        Map<Currency, Double> senderWallets = sender.getWallets();
+        Map<Currency, Double> recipientWallets = recipient.getWallets();
 
         if (!senderWallets.containsKey(senderCurrency) || !recipientWallets.containsKey(recipientCurrency)) {
             throw new IllegalArgumentException("Invalid currency for user");
@@ -76,8 +76,8 @@ public class TransactionService {
                 throw new IllegalArgumentException("Exchange rate is required for cross-currency transactions");
             }
             convertedAmount = BigDecimal.valueOf(currencyConversionService.convert(
-                    Currency.valueOf(senderCurrency),
-                    Currency.valueOf(recipientCurrency),
+                    senderCurrency,
+                    recipientCurrency,
                     amount.doubleValue()
             ));
         }

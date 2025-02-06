@@ -1,6 +1,7 @@
-package com.qaracter.digitalwallet.contoller;
+package com.qaracter.digitalwallet.controller;
 
 import com.qaracter.digitalwallet.common.exception.InsufficientFundsException;
+import com.qaracter.digitalwallet.model.Currency;
 import com.qaracter.digitalwallet.model.Transaction;
 import com.qaracter.digitalwallet.service.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,9 +44,9 @@ public class TransactionController {
     @PostMapping
     public Transaction createTransaction(
             @RequestParam Long senderUserId,
-            @RequestParam String senderCurrency,
+            @RequestParam Currency senderCurrency,
             @RequestParam Long recipientUserId,
-            @RequestParam String recipientCurrency,
+            @RequestParam Currency recipientCurrency,
             @RequestParam BigDecimal amount,
             @RequestParam(required = false) BigDecimal exchangeRate) throws InsufficientFundsException {
         return transactionService.createTransaction(senderUserId, senderCurrency, recipientUserId, recipientCurrency, amount, exchangeRate);
