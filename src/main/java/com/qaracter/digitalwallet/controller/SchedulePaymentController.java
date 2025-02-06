@@ -1,6 +1,6 @@
 package com.qaracter.digitalwallet.controller;
 
-import com.qaracter.digitalwallet.service.SchedulePayment;
+import com.qaracter.digitalwallet.model.SchedulePayment;
 import com.qaracter.digitalwallet.service.SchedulePaymentService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
