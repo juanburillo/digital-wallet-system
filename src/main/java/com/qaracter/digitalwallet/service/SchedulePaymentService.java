@@ -3,8 +3,11 @@ package com.qaracter.digitalwallet.service;
 import com.qaracter.digitalwallet.model.SchedulePayment;
 import org.springframework.stereotype.Service;
 
+import javax.swing.text.html.Option;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+import java.util.concurrent.ExecutionException;
 
 @Service
 public class SchedulePaymentService {
@@ -33,6 +36,18 @@ public class SchedulePaymentService {
     }
 
     public void deleteSchedule(Long id) {
+        Optional<SchedulePayment> scheduleToDelete = schedulePaymentList.stream()
+                .filter(schedulePayment -> schedulePayment.getScheduleId().equals(id))
+                .findFirst();
+
+        if (scheduleToDelete.isPresent()){
+            SchedulePayment schedulePayment = scheduleToDelete.get();
+            try{
+                schedulePayment.interrupt();
+            } catch (Exception e){
+                e.printStackTrace();
+            }
+        }
         schedulePaymentList.removeIf(schedulePayment -> schedulePayment.getScheduleId().equals(id));
     }
 
