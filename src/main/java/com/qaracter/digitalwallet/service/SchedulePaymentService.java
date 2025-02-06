@@ -1,6 +1,5 @@
 package com.qaracter.digitalwallet.service;
 
-import com.qaracter.digitalwallet.model.SchedulePayment;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

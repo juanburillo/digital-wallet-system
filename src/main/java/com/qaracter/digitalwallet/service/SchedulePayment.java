@@ -1,4 +1,6 @@
-package com.qaracter.digitalwallet.model;
+package com.qaracter.digitalwallet.service;
+
+import com.qaracter.digitalwallet.model.Transaction;
 
 import java.util.Timer;
 import java.util.TimerTask;
