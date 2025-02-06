@@ -27,6 +27,7 @@ public class SchedulePayment extends Thread {
      * @param days        the delay in days before execution.
      */
     public SchedulePayment(Long id, Transaction transaction, int days) {
+        this.id = id;
         this.transaction = transaction;
         this.days = days;
     }
