@@ -19,10 +19,10 @@ Welcome to the Digital Wallet & Transaction System! This project allows users to
 
 ## Team Members 👥
 
-- **Enes** - User & Wallet Management 🛠️
-- **Emre** - Transaction System 💳
-- **Juan** - Currency Conversion Module 💱
-- **Jaime** - Scheduled Payments Engine 🗓️
+- **Enes** - User & Wallet Management Branch 🛠️
+- **Emre** - Transaction System Branch 💳
+- **Juan** - Currency Conversion Module Branch 💱
+- **Jaime** - Scheduled Payments Engine Branch 🗓️
 
 ## Project Structure 📁
 
@@ -30,6 +30,11 @@ The project is structured as follows:
 
 ```
 com.qaracter.digitalwallet
+├── common
+│   ├── config
+│   │   └── SwaggerConfig.java
+│   └── exception
+│       └── InsufficientFundsException.java
 ├── controller
 │   ├── SchedulePaymentController.java
 │   ├── TransactionController.java

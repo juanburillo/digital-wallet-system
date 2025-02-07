@@ -15,7 +15,7 @@ public class SwaggerConfig {
     public OpenAPI customOpenAPI() {
         return new OpenAPI().info(new Info()
                 .title("Digital Wallet & Transactions API") // API title
-                .version("1.0") // API version
+                .version("1.1") // API version
                 .description("A digital wallet system that supports currency conversion, transactions, and scheduled payments.") // API description
         );
     }
