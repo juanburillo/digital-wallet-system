@@ -152,6 +152,7 @@ Each controller handles the endpoints for a specific part of the system:
 - Spring Web
 - Java Threads
 - Java Timer
+- JUnit for Tests
 
 ## How to Run Locally 🏃‍♂️
 
