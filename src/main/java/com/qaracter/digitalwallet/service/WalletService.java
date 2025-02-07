@@ -16,11 +16,12 @@ public class WalletService {
         this.userService = userService;
     }
 
-    public void createWallet(Long userId, Currency currency, Double balance) {
+    public void createWallet(Long userId, Currency currency, double balance) {
         User user = userService.getUser(userId);
-        if (user != null) { // If user exists
-            user.getWallets().put(currency, balance);
+        if (user == null) {
+            throw new IllegalArgumentException("User not found");
         }
+        user.getWallets().put(currency, balance);
     }
     
 }
