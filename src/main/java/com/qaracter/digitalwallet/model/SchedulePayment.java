@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class SchedulePayment extends Thread {
 
-    private Transaction transaction;
+    private final Transaction transaction;
     private Long id;
     private int days;
     private final Timer timer = new Timer();
@@ -79,8 +79,7 @@ public class SchedulePayment extends Thread {
                 timer.schedule(task, TimeUnit.DAYS.toMillis(days));
                 System.out.println("Send " + transaction.getAmount() + transaction.getCurrency() + " to user X in" + this.days + " days");
             } catch (Exception e) {
-                System.err.println("Error caught in the thread execution");
-                e.printStackTrace();
+                System.err.println("Error caught in the thread execution.");
             }
         }
     }

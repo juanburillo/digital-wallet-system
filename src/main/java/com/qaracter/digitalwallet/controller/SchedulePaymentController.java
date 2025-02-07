@@ -18,7 +18,7 @@ import java.util.List;
 @RequestMapping("/schedule")
 public class SchedulePaymentController {
 
-    private SchedulePaymentService scheduleService;
+    private final SchedulePaymentService scheduleService;
 
     /**
      * Constructor for SchedulePaymentController.
