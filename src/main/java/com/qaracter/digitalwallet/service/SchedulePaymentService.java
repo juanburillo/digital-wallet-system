@@ -1,8 +1,6 @@
 package com.qaracter.digitalwallet.service;
 
-import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.qaracter.digitalwallet.model.SchedulePayment;
-import com.qaracter.digitalwallet.model.Transaction;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

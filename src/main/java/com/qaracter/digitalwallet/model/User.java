@@ -8,9 +8,9 @@ import java.util.Map;
  */
 public class User {
 
-    private Long id;
-    private String name;
-    private Map<Currency, Double> wallets = new HashMap<>();
+    private final Long id;
+    private final String name;
+    private final Map<Currency, Double> wallets = new HashMap<>();
 
     public User(Long id, String name) {
         this.id = id;
