@@ -1,6 +1,8 @@
 package com.qaracter.digitalwallet.service;
 
+import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.qaracter.digitalwallet.model.SchedulePayment;
+import com.qaracter.digitalwallet.model.Transaction;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -51,7 +53,8 @@ public class SchedulePaymentService {
      * @return the created {@link SchedulePayment} object.
      */
     public SchedulePayment createSchedule(SchedulePayment schedulePayment) {
-        schedulePayment.run();
+        schedulePayment.setScheduleId(this.nextID++);
+        schedulePayment.start();
         schedulePaymentList.add(schedulePayment);
         return schedulePayment;
     }
@@ -68,11 +71,7 @@ public class SchedulePaymentService {
 
         if (scheduleToDelete.isPresent()) {
             SchedulePayment schedulePayment = scheduleToDelete.get();
-            try {
-                schedulePayment.interrupt();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+            schedulePayment.stop();
         }
         schedulePaymentList.removeIf(schedulePayment -> schedulePayment.getScheduleId().equals(id));
     }
