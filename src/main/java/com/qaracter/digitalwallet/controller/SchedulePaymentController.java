@@ -17,6 +17,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/schedule")
 public class SchedulePaymentController {
+
     private SchedulePaymentService scheduleService;
 
     /**
@@ -86,4 +87,5 @@ public class SchedulePaymentController {
             @Schema(description = "The ID of the scheduled payment to delete", example = "1") Long id) {
         scheduleService.deleteSchedule(id);
     }
+
 }

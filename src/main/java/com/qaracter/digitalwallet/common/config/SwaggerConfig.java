@@ -1,4 +1,4 @@
-package com.qaracter.digitalwallet.config;
+package com.qaracter.digitalwallet.common.config;
 
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
@@ -14,9 +14,9 @@ public class SwaggerConfig {
     @Bean
     public OpenAPI customOpenAPI() {
         return new OpenAPI().info(new Info()
-                .title("Digital Wallet & Transactions API")
-                .version("1.0")
-                .description("A digital wallet system that supports currency conversion, transactions, and scheduled payments.")
+                .title("Digital Wallet & Transactions API") // API title
+                .version("1.0") // API version
+                .description("A digital wallet system that supports currency conversion, transactions, and scheduled payments.") // API description
         );
     }
 

@@ -79,4 +79,5 @@ public class TransactionController {
                                                    @Schema(description = "The wallet ID for which transaction history is requested", example = "1-USD") String walletId) {
         return transactionService.getTransactionHistory(walletId);
     }
+
 }

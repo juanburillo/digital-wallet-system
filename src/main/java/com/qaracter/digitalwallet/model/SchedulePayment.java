@@ -8,6 +8,7 @@ import java.util.concurrent.TimeUnit;
  * Represents a scheduled payment that runs as a separate thread.
  */
 public class SchedulePayment extends Thread {
+
     private Transaction transaction;
     private Long id;
     private int days;
@@ -83,5 +84,6 @@ public class SchedulePayment extends Thread {
             }
         }
     }
+
 }
 
