@@ -64,6 +64,14 @@ public class SchedulePayment {
         this.days = schedulePayment.getDays();
     }
 
+    public Transaction getTransaction() {
+        return transaction;
+    }
+
+    public void setTransaction(Transaction transaction) {
+        this.transaction = transaction;
+    }
+
     /**
      * Gets the unique identifier of the scheduled payment.
      *
