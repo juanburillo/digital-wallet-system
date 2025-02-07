@@ -4,6 +4,9 @@ import com.qaracter.digitalwallet.model.ExchangeRates;
 import com.qaracter.digitalwallet.model.Currency;
 import org.springframework.stereotype.Service;
 
+/**
+ * Contains the business logic for currency conversion.
+ */
 @Service
 public class CurrencyConversionService {
 

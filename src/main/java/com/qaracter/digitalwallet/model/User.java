@@ -3,7 +3,11 @@ package com.qaracter.digitalwallet.model;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Represents a user within the system.
+ */
 public class User {
+
     private Long id;
     private String name;
     private Map<Currency, Double> wallets = new HashMap<>();
@@ -24,4 +28,5 @@ public class User {
     public Map<Currency, Double> getWallets() {
         return wallets;
     }
+
 }

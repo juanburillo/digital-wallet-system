@@ -14,6 +14,7 @@ import java.util.Optional;
  */
 @Service
 public class SchedulePaymentService {
+
     private final List<SchedulePayment> schedulePaymentList = new ArrayList<>();
     private Long nextID = 1L;
 
@@ -74,4 +75,5 @@ public class SchedulePaymentService {
         }
         schedulePaymentList.removeIf(schedulePayment -> schedulePayment.getScheduleId().equals(id));
     }
+
 }

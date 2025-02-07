@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * Represents a scheduled payment that runs as a separate thread.
  */
-public class SchedulePayment{
+public class SchedulePayment {
     private Transaction transaction;
     private Long id;
     private int days;
@@ -117,5 +117,6 @@ public class SchedulePayment{
         scheduler.shutdown();
         timer.cancel();
     }
+
 }
 
