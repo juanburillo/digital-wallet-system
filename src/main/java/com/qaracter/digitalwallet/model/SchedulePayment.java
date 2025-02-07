@@ -1,7 +1,6 @@
 package com.qaracter.digitalwallet.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -13,6 +12,7 @@ import java.util.concurrent.TimeUnit;
  * Represents a scheduled payment that runs as a separate thread.
  */
 public class SchedulePayment {
+
     private Transaction transaction;
     private Long id;
     private int days;
@@ -30,21 +30,21 @@ public class SchedulePayment {
     @JsonIgnore
     private final Thread thread = new Thread(() -> {
         try {
-            while (!Thread.currentThread().isInterrupted()) {  // Evitar bucle infinito
+            while (!Thread.currentThread().isInterrupted()) {  // Avoid infinite
                 timer.schedule(task, TimeUnit.DAYS.toMillis(days));
                 System.out.println("Send money transfer request...");
-                Thread.sleep(TimeUnit.DAYS.toMillis(days)); // Pausa antes de la siguiente ejecución
+                Thread.sleep(TimeUnit.DAYS.toMillis(days)); // Pause before next execution
             }
         } catch (InterruptedException e) {
             System.err.println("Thread interrupted. Stopping execution.");
-            Thread.currentThread().interrupt(); // Restaurar la interrupción
+            Thread.currentThread().interrupt(); // Restore the interruption
         } catch (Exception e) {
-            System.err.println("Error caught in the thread execution");
-            e.printStackTrace();
+            System.err.println("Error caught in the thread execution.");
         }
     });
 
     public SchedulePayment(){}
+
     /**
      * Constructs a scheduled payment with the specified ID, transaction, and delay in days.
      *
